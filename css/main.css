@@ -1,0 +1,252 @@
+/* Global Rules */
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Droid Arabic Kufi", Arial, Helvetica, sans-serif;
+  background-image: url("../images/body-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--black);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+button,
+select {
+  font-size: 16px;
+  font-family: "Droid Arabic Kufi", Arial, Helvetica, sans-serif !important;
+}
+
+::placeholder {
+  color: rgb(194, 194, 194);
+  font-family: "Droid Arabic Kufi", Arial, Helvetica, sans-serif !important;
+}
+
+:root {
+  --maincolor: rgb(255, 79, 25);
+  --maincolorlight: rgb(255, 225, 215);
+  --black: #232a34;
+  --dark: rgb(21, 16, 39);
+  --white: #fff;
+
+  --transition: 0.3s ease-in-out;
+}
+
+/* Container */
+.container {
+  margin: auto;
+  padding: 0 15px;
+  overflow: hidden;
+}
+/* Navbar */
+.navbar {
+  height: 70px;
+  border-bottom: solid 1px rgba(255, 79, 25, 0.2);
+  background-color: var(--black);
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 70px;
+}
+.navbar .navbar-brand {
+  color: var(--maincolor);
+  font-size: 20px;
+  font-weight: bold;
+}
+.navbar .navbar-nav {
+  padding: 0;
+  margin: 0;
+}
+.navbar .navbar-nav li {
+  display: inline-block;
+}
+.navbar .navbar-nav li a {
+  padding: 10px;
+  color: var(--dark);
+  border-bottom: 2px solid transparent;
+  font-weight: bold;
+  color: var(--white);
+  transition: var(--transition);
+}
+.navbar .navbar-nav li a:hover {
+  border-bottom: solid 2px var(--maincolor);
+  color: var(--maincolor);
+}
+.navbar .navbar-nav .get-now {
+  background-color: var(--maincolor);
+  color: var(--white);
+  transition: var(--transition);
+  border: none !important;
+}
+.navbar .navbar-nav .get-now:hover {
+  color: var(--black);
+  background-color: var(--white);
+  border: none !important;
+}
+.navbar .barDropDown {
+  color: var(--dark);
+}
+
+/* Content */
+.content {
+  margin-top: 35px;
+}
+.content .top-content {
+  color: var(--dark);
+  font-size: 30px;
+}
+.content .top-content h2 {
+  font-size: 32px;
+}
+.content .top-content h4 {
+  color: var(--maincolor);
+  font-size: 28px;
+}
+
+.content .forms {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.content .forms form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+.content .forms form input,
+.content .forms form select,
+.content .forms form button {
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.content .forms form input,
+.content .forms form select {
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 79, 25, 0.5);
+  outline: none;
+  background-color: var(--maincolorlight);
+}
+.content .forms form .submit-btn {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.content .forms form .submit-btn button {
+  background-color: var(--maincolor);
+  color: var(--white);
+  padding: 20px 15px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: bold;
+}
+.content .forms form .submit-btn button:hover {
+  background-color: var(--black);
+}
+
+.content .forms form .paid {
+  font-size: 18px;
+}
+.content .forms form h2 {
+  font-size: 20px;
+}
+.content .forms form option {
+  color: #555;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 50px;
+  color: #fff;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+/* Extra Small Screen */
+@media (max-width: 767px) {
+  .container {
+    width: 90%;
+  }
+  .content .forms {
+    width: 100%;
+  }
+
+  .navbar-nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: var(--black);
+  }
+  .navbar-nav li {
+    display: block !important;
+    text-align: center;
+  }
+
+  .navbar .barDropDown {
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--white);
+  }
+}
+
+/* Small Screen */
+@media (min-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  .content .forms {
+    width: 65%;
+  }
+
+  .navbar .barDropDown {
+    display: none !important;
+  }
+
+  .navbar-nav {
+    display: block !important;
+  }
+}
+
+/* Meduim Screen */
+@media (min-width: 992px) {
+  .container {
+    width: 80%;
+  }
+  .navbar .barDropDown {
+    display: none !important;
+  }
+
+  .content .forms {
+    width: 55%;
+  }
+
+  .navbar-nav {
+    display: block;
+  }
+}
